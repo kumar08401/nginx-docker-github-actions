@@ -15,12 +15,14 @@ jobs:
       with:
         path: main 
   build:
+    needs: checkout
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Buildd the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
   login:
+    needs: build
     runs-on: ubuntu-latest
     steps:
     - name: Login to Docker Hub

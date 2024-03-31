@@ -30,3 +30,11 @@ jobs:
       with:
         username: kumar08401
         password: $Zaq1Xsw2
+  tag:
+    needs: login
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: tag Docker image
+      #run: docker push . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker tag my-image-name:$(date +%s) yourhubusername/verse_gapminder:my-image-name:$(date +%s)

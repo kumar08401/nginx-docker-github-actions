@@ -1,0 +1,11 @@
+name: testingworkflow
+on:
+ push:
+   branches: [ main ]
+
+jobs:
+  runs-on: ubuntu-latest
+  tetsingjob:
+    steps:
+      - name: testing step
+        run: echo date

@@ -14,4 +14,5 @@ jobs:
         cat testing.txt
         echo "step1value=hello" >> $GITHUB_OUTPUT
         echo "$GITHUB_OUTPUT"
+        ls
        

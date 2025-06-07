@@ -9,7 +9,7 @@ jobs:
    steps:
      - name: makefile
        run: |
-        echo "savefile=testing" >> testing.txt
+        echo "testing errorcode 403 " >> testing.txt
         ls
-        # cat testing.txt
+        cat testing.txt
        

@@ -7,7 +7,5 @@ jobs:
   tetsingjob:
    runs-on: ubuntu-latest
    steps:
-     - name: Checkout
-       uses: actions/checkout@v4
      - name: testing step
        run: echo date

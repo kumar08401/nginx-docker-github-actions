@@ -11,5 +11,5 @@ jobs:
        run: |
         echo "savefile=testing" >> testing.txt
         ls
-        cat ${{testing.txt}}
+        cat testing.txt
        

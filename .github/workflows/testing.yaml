@@ -12,4 +12,6 @@ jobs:
         echo "testing errorcode 403 " >> testing.txt
         ls
         cat testing.txt
+        echo "step1value=hello" >> $GITHUB_OUTPUT
+        echo "$GITHUB_OUTPUT"
        

@@ -1,18 +1,17 @@
-name: testingworkflow
-on:
- push:
-   branches: [ main ]
-
-jobs:
-  makefile:
-   runs-on: ubuntu-latest
-   steps:
-     - name: makefile
-       run: |
-        echo "testing errorcode 403 " >> testing.txt
-        ls
-        cat testing.txt
-        echo "step1value=hello" >> $GITHUB_OUTPUT
-        echo "$GITHUB_OUTPUT"
-        ls
-       
+ name: testingworkflow
+ on:
+  push:
+    branches: [ main ]
+ 
+ jobs:
+   makefile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: makefile
+        run: |
+         echo "testing errorcode 403 " >> testing.txt
+         ls
+         cat testing.txt
+         echo "step1value=hello" >> $GITHUB_OUTPUT
+         echo "$GITHUB_OUTPUT"
+         cat GITHUB_OUTPUT     

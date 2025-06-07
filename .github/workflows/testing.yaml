@@ -10,6 +10,5 @@ jobs:
      - name: makefile
        run: |
         echo "savefile=testing" >> testing.txt
-        cat savefile
-        cat testing.txt
+        ls
        

@@ -4,8 +4,12 @@ on:
    branches: [ main ]
 
 jobs:
-  tetsingjob:
+  makefile:
    runs-on: ubuntu-latest
    steps:
-     - name: testing step
-       run: echo date
+     - name: makefile
+       run: |
+        echo "savefile=testing" >> testing.txt
+        cat savefile
+        cat testing.txt
+       

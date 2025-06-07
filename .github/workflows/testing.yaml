@@ -9,4 +9,6 @@
     steps:
       - name: makefile
         run: |
-         echo "step1value=hello"     
+         echo "step1value=hello"
+    outputs:
+     output1: ${{ steps.step1.outputs.step1value }}

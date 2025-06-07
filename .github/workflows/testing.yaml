@@ -2,13 +2,22 @@
  on:
   push:
     branches: [ main ]
- 
- jobs:
-   makefile:
-    runs-on: ubuntu-latest
-    steps:
-      - name: makefile
-        run: |
-         echo "step1value=hello"
-    outputs:
-     output1: ${{ steps.step1.outputs.step1value }}
+
+ job2:
+  runs-on: ubuntu-latest
+    
+  outputs:
+    output1: ${{ steps.step1.outputs.step1value }}
+    
+  steps:
+    - name: Step 1
+      id: step1
+      # run: echo "::set-output name=step1value::hello"
+      run: |
+      echo "step1value=hello" >> $GITHUB_OUTPUT
+      echo "$GITHUB_OUTPUT"
+job3:
+  runs-on: ubuntu-latest
+  needs: job2
+  steps:
+    - run: echo ${{needs.job2.outputs.output1}}

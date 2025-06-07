@@ -30,6 +30,7 @@ jobs:
         run: |
           echo "step2value=world" >> $GITHUB_OUTPUT
           pwd
+          ls -ltr
     
   job3:
     runs-on: ubuntu-latest

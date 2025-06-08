@@ -7,15 +7,24 @@ on:
         type: string
         description: "demovaribale"
         default: "demostring"
+        
 env:
-  registry: docker.io
-  repository: kumar08401
+  registry: "docker.io"
+  repository: "kumar08401"
 
 jobs:
   demoenv:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: reposiry update
         run: echo "${{env.registry}}/${{env.repository}}"
+      - name: contxt
+        env:
+          github_context: github
+          run: echo github_context
+      - name: context2
+        env:
+          github_context: github
+          run: echo ${{github_context}}

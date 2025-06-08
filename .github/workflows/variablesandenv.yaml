@@ -26,9 +26,10 @@ jobs:
         run: | 
            echo "$GITHUB_CONTEXT"
       - name: namevar
+        id: namevarid
         run: echo "name=kumar"
     outputs:
-      output1: ${{steps.namevar.name}}
+      output1: ${{steps.namevarid.name}}
   demoscanvar:
     runs-on: ubuntu-latest
     steps:

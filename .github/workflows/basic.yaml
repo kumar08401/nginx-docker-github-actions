@@ -12,6 +12,5 @@ jobs:
   demojob:
     runs-on: ubuntu-latest
     steps:
-      - name: chekout
-        #use: actions/checkout@v3
-        run: echo date
+      - name: Checkout
+        uses: actions/checkout@v4

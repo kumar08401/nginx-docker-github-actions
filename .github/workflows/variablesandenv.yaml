@@ -35,7 +35,7 @@ jobs:
       - name: Step 1
         id: step1
         # run: echo "::set-output name=step1value::hello"
-        run: echo "step1value=hello"
+        run: echo "step1value=hello" >> $GITHUB_OUTPUT
 
   demoscanvar:
     runs-on: ubuntu-latest

@@ -4,10 +4,10 @@ on:
   workflow_dispatch:
     inputs:
       name:
-      type: string
-      description: "demodescription"
-      default: "repository"
-      required: true
+        type: string
+        description: "demodescription"
+        default: "repository"
+        required: true
 jobs:
   demojob:
     runs-on: ubuntu-latest

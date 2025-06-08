@@ -8,8 +8,8 @@ on:
         description: "demovaribale"
         default: "demostring"
 env:
-  registry: "docker.io"
-  repository: "kumar08401"
+  registry: docker.io
+  repository: kumar08401
 
 jobs:
   demoenv:

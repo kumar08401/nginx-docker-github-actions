@@ -16,6 +16,6 @@ jobs:
     steps:
       - name: export the value
         id: exportid
-        run: echo "savevalue=kumar" >> $kumar08401
+        run: echo "step1value=hello" >> $GITHUB_OUTPUT
     outputs:
-      output1: ${{steps.exportid.outputs.savevalue}}
+      output1: ${{steps.exportid.outputs.step1value}}

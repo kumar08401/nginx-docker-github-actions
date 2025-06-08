@@ -25,3 +25,12 @@ jobs:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
         run: | 
            echo "$GITHUB_CONTEXT"
+      - name: namevar
+        run: echo "name=kumar"
+    outputs:
+      output1: ${{steps.namevar.name}}
+  demoscanvar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: pulltheenvfromjobdemoenv
+        run: echo ${{needs.demoenv.outputs.output1}}

@@ -11,7 +11,7 @@ on:
 env:
   registry: "docker.io"
   repository: "kumar08401"
-Jobs:
+jobs:
   job2:
       runs-on: ubuntu-latest
       

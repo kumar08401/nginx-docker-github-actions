@@ -33,6 +33,8 @@ jobs:
 
   demoscanvar:
     runs-on: ubuntu-latest
+    needs:
+     - demoenv
     steps:
       - name: pulltheenvfromjobdemoenv
         run: echo ${{needs.demoenv.outputs.output1}}

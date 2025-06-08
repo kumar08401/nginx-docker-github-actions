@@ -19,6 +19,8 @@ jobs:
       output2: ${{ steps.step2.outputs.step2value }}
       
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Step 1
         id: step1
           # run: echo "::set-output name=step1value::hello"

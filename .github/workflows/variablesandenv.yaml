@@ -1,37 +1,21 @@
-name: variableandenv
+name: varsandenv
 
-on:
+on: 
   workflow_dispatch:
     inputs:
       name:
         type: string
-        description: "demovaribale"
-        default: "demostring"
-        
+        default: "repository"
 env:
-  registry: "docker.io"
-  repository: "kumar08401"
+  registory: docker.io
+  repository: kumar08401
+
 jobs:
   job2:
-      runs-on: ubuntu-latest
-      
-      outputs:
-        output1: ${{ steps.step1.outputs.step1value }}
-        output2: ${{ steps.step2.outputs.step2value }}
-      
-      steps:
-        - name: Step 1
-          id: step1
-          # run: echo "::set-output name=step1value::hello"
-          run: echo "step1value=hello" >> $GITHUB_OUTPUT 
-
-        - name: Step 2
-          id: step2
-          # run: echo "::set-output name=step2value::world"
-          run: echo "step2value=world" >> $GITHUB_OUTPUT
-    
-  job3:
-        runs-on: ubuntu-latest
-        needs: job2
-        steps:
-          - run: echo ${{needs.job2.outputs.output1}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: export the value
+        id: exportid
+        run: echo "savevalue=kumar" >> $kumar
+    outputs:
+      output1: ${{steps.exportid.outputs.savevalue}}

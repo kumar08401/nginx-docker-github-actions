@@ -1,0 +1,21 @@
+name: variableandenv
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        type: string
+        description: "demovaribale"
+        default: "demostring"
+env:
+  registry: "docker.io"
+  repository: "kumar08401"
+
+jobs:
+  demoenv:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: reposiry update
+        run: echo "${{env.registry}}/${{env.repository}}"

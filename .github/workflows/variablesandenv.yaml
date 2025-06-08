@@ -11,34 +11,27 @@ on:
 env:
   registry: "docker.io"
   repository: "kumar08401"
+Jobs:
+  job2:
+      runs-on: ubuntu-latest
+      
+      outputs:
+        output1: ${{ steps.step1.outputs.step1value }}
+        output2: ${{ steps.step2.outputs.step2value }}
+      
+      steps:
+        - name: Step 1
+          id: step1
+          # run: echo "::set-output name=step1value::hello"
+          run: echo "step1value=hello" >> $GITHUB_OUTPUT
 
-jobs:
-  demoenv:
-    runs-on: ubuntu-latest
-    outputs:
-      output1: ${{steps.namevarid.outputs.name}}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: reposiry update
-        run: echo "${{env.registry}}/${{env.repository}}"
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJSON(github) }}
-        run: | 
-           echo "$GITHUB_CONTEXT"
-    outputs:
-      output1: ${{ steps.step1.outputs.step1value }}
-      output2: ${{ steps.step2.outputs.step2value }}
+        - name: Step 2
+          id: step2
+          # run: echo "::set-output name=step2value::world"
+          run: echo "step2value=world" >> $GITHUB_OUTPUT
     
-    steps:
-      - name: Step 1
-        id: step1
-        # run: echo "::set-output name=step1value::hello"
-        run: echo "step1value=hello" >> $GITHUB_OUTPUT
-
-  demoscanvar:
-    runs-on: ubuntu-latest
-    needs: job2
-    steps:
-      - run: echo ${{needs.job2.outputs.output1}}
+  job3:
+        runs-on: ubuntu-latest
+        needs: job2
+        steps:
+          - run: echo ${{needs.job2.outputs.output1}}
